@@ -2,9 +2,9 @@ import React from 'react';
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, googleProvider } from '../firebaseConfig';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast'; // ✅ replaced react-toastify
-import { Tooltip } from 'react-tooltip'; // ✅ added tooltip
-import 'react-tooltip/dist/react-tooltip.css'; // ✅ tooltip CSS
+import toast from 'react-hot-toast'; 
+import { Tooltip } from 'react-tooltip'; 
+import 'react-tooltip/dist/react-tooltip.css'; 
 
 export default function Login() {
   const [email, setEmail] = React.useState('');
@@ -13,34 +13,31 @@ export default function Login() {
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
 
-  // ✅ Email login handler
+  // Email login handler
   const handleEmailLogin = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      toast.success('✅ Logged in successfully!');
-      navigate(from, { replace: true });
+      toast.success('Logged in successfully!');
+      setTimeout(() => navigate(from, { replace: true }), 300);
     } catch (err) {
-      toast.error('❌ ' + err.message);
+      toast.error(err.message);
     }
   };
 
-  // ✅ Google login handler
+  // Google login handler
   const handleGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      toast.success('🎉 Logged in with Google!');
-      navigate(from, { replace: true });
+      toast.success('Logged in with Google!');
+      setTimeout(() => navigate(from, { replace: true }), 300);
     } catch (err) {
-      toast.error('❌ ' + err.message);
+      toast.error(err.message);
     }
   };
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 rounded-lg shadow-md bg-base-200">
-      {/* ✅ React Hot Toast container */}
-      <Toaster position="top-right" reverseOrder={false} />
-
       <h2 className="text-2xl font-semibold mb-4 text-center">Login</h2>
 
       <form onSubmit={handleEmailLogin} className="space-y-3">

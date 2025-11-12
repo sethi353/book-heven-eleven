@@ -25,7 +25,7 @@ export default function Register() {
     return '';
   };
 
-  //Register with Email & Password
+  // Register with Email & Password
   const handleRegister = async (e) => {
     e.preventDefault();
     const err = validatePassword(password);
@@ -34,21 +34,21 @@ export default function Register() {
     try {
       const userCred = await createUserWithEmailAndPassword(auth, email, password);
       await updateProfile(userCred.user, { displayName: name, photoURL: photo });
-      toast.success(' Registered successfully!');
-      setTimeout(() => navigate('/'), 600); 
+      toast.success('Registered successfully!');
+      setTimeout(() => navigate('/'), 300);
     } catch (err) {
-      toast.error( + err.message);
+      toast.error(err.message);
     }
   };
 
-  //  Register with Google
+  // Register with Google
   const handleGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      toast.success(' Registered via Google!');
-      setTimeout(() => navigate('/'), 600);
+      toast.success('Registered via Google!');
+      setTimeout(() => navigate('/'), 300);
     } catch (err) {
-      toast.error( + err.message);
+      toast.error(err.message);
     }
   };
 
@@ -92,60 +92,27 @@ export default function Register() {
           onChange={(e) => setPassword(e.target.value)}
           data-tooltip-id="password-tip"
         />
-        <Tooltip
-          id="password-tip"
-          place="right"
-          content="Password must have 6+ chars, 1 uppercase & 1 lowercase"
-          style={{ position: 'fixed' }}
-        />
+        <Tooltip id="password-tip" place="right" content="Password must have 6+ chars, 1 uppercase & 1 lowercase" style={{ position: 'fixed' }} />
 
-        
         <div className="flex justify-between items-center">
-          <button
-            className="btn btn-primary"
-            type="submit"
-            data-tooltip-id="register-btn-tip"
-          >
+          <button className="btn btn-primary" type="submit" data-tooltip-id="register-btn-tip">
             Register
           </button>
-          <Tooltip
-            id="register-btn-tip"
-            place="top"
-            content="Create your account"
-            style={{ position: 'fixed', zIndex: 9999 }}
-          />
+          <Tooltip id="register-btn-tip" place="top" content="Create your account" style={{ position: 'fixed', zIndex: 9999 }} />
 
-          <Link
-            to="/login"
-            className="link"
-            data-tooltip-id="login-link-tip"
-          >
+          <Link to="/login" className="link" data-tooltip-id="login-link-tip">
             Login
           </Link>
-          <Tooltip
-            id="login-link-tip"
-            place="top"
-            content="Already have an account? Log in"
-            style={{ position: 'fixed', zIndex: 9999 }}
-          />
+          <Tooltip id="login-link-tip" place="top" content="Already have an account? Log in" style={{ position: 'fixed', zIndex: 9999 }} />
         </div>
       </form>
 
       <div className="divider">OR</div>
 
-      <button
-        className="btn btn-outline btn-block"
-        onClick={handleGoogle}
-        data-tooltip-id="google-btn-tip"
-      >
+      <button className="btn btn-outline btn-block" onClick={handleGoogle} data-tooltip-id="google-btn-tip">
         Register with Google
       </button>
-      <Tooltip
-        id="google-btn-tip"
-        place="top"
-        content="Sign up quickly using your Google account"
-        style={{ position: 'fixed', zIndex: 9999 }}
-      />
+      <Tooltip id="google-btn-tip" place="top" content="Sign up quickly using your Google account" style={{ position: 'fixed', zIndex: 9999 }} />
     </div>
   );
 }
