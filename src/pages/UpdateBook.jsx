@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import toast, { Toaster } from 'react-hot-toast'; 
+import toast from 'react-hot-toast'; 
 import { Tooltip } from 'react-tooltip'; 
 import 'react-tooltip/dist/react-tooltip.css';
 
@@ -17,19 +17,19 @@ export default function UpdateBook() {
       .then((res) => setBook(res.data))
       .catch((err) => {
         console.error(err);
-        toast.error(' Failed to load book data');
+        toast.error('Failed to load book data');
       });
   }, [id]);
 
-  //  Handle form submission
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await api.put(`/books/${id}`, book);
-      toast.success(' Book updated successfully');
+      toast.success('Book updated successfully');
       navigate('/my-books');
     } catch (err) {
-      toast.error(' Update failed');
+      toast.error('Update failed');
       console.error(err);
     }
   };
@@ -38,9 +38,6 @@ export default function UpdateBook() {
 
   return (
     <div className="max-w-2xl mx-auto p-6 mt-8 bg-base-200 rounded-lg shadow-lg">
-      {/*  React Hot Toast Container */}
-      <Toaster position="top-right" reverseOrder={false} />
-
       <h2 className="text-2xl font-semibold mb-4 text-center">Update Book</h2>
 
       <form onSubmit={handleSubmit} className="space-y-3">
@@ -92,7 +89,6 @@ export default function UpdateBook() {
         />
         <Tooltip id="summary-tip" place="right" content="Briefly describe the story" />
 
-        {/* 👇 Manual image URL input */}
         <input
           type="text"
           className="input input-bordered w-full"
@@ -103,7 +99,6 @@ export default function UpdateBook() {
         />
         <Tooltip id="image-tip" place="right" content="Paste an online image URL" />
 
-        {/*  Optional image preview */}
         {book.coverImage && (
           <img
             src={book.coverImage}

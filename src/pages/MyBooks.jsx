@@ -2,7 +2,7 @@ import React from 'react';
 import api from '../services/api';
 import { auth } from '../firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
-import toast, { Toaster } from 'react-hot-toast'; 
+import toast from 'react-hot-toast'; 
 import { Link } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { Tooltip } from 'react-tooltip'; 
@@ -34,7 +34,7 @@ export default function MyBooks() {
         const filtered = res.data.filter((b) => b.userEmail === email);
         setBooks(filtered);
       })
-      .catch((err) => toast.error('Failed to fetch books '))
+      .catch(() => toast.error('Failed to fetch books'))
       .finally(() => setLoading(false));
   };
 
@@ -42,10 +42,10 @@ export default function MyBooks() {
     if (!confirm('Delete this book?')) return;
     try {
       await api.delete(`/books/${id}`);
-      toast.success(' Book deleted successfully');
+      toast.success('Book deleted successfully');
       setBooks((prev) => prev.filter((b) => b._id !== id));
     } catch (err) {
-      toast.error(' Delete failed');
+      toast.error('Delete failed');
     }
   };
 
@@ -53,9 +53,6 @@ export default function MyBooks() {
 
   return (
     <div className="p-4">
-      {/*  React Hot Toast container */}
-      <Toaster position="top-right" reverseOrder={false} />
-
       <h2 className="text-2xl mb-4 font-semibold text-center">My Books</h2>
 
       {books.length === 0 ? (

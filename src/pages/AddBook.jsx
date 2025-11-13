@@ -1,6 +1,6 @@
 import React from 'react';
 import api from '../services/api';
-import toast, { Toaster } from 'react-hot-toast'; 
+import toast from 'react-hot-toast'; 
 import { auth } from '../firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
@@ -34,19 +34,16 @@ export default function AddBook() {
         userName: user.displayName || user.email
       };
       await api.post('/books', payload);
-      toast.success(' Book added successfully!');
+      toast.success('Book added successfully!');
       navigate('/my-books');
     } catch (err) {
       console.error(err);
-      toast.error(' Failed to add book');
+      toast.error('Failed to add book');
     }
   };
 
   return (
     <div className="max-w-2xl mx-auto p-4 relative">
-      {/*  React Hot Toast container */}
-      <Toaster position="top-right" reverseOrder={false} />
-
       <h2 className="text-2xl mb-4 font-semibold text-center">Add Book</h2>
 
       <form onSubmit={handleSubmit} className="space-y-3">
