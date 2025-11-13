@@ -3,6 +3,10 @@ import api from '../services/api';
 import { Link } from 'react-router-dom';
 import BookCard from '../components/BookCard';
 import Loading from '../components/Loading';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 
 export default function Home() {
   const [latest, setLatest] = React.useState([]);
@@ -17,22 +21,55 @@ export default function Home() {
 
   return (
     <div>
-      <section className="hero bg-base-200 rounded-lg p-6 mb-8">
-        <div className="hero-content flex-col lg:flex-row">
-          <div>
-            <h1 className="text-4xl font-bold">Welcome to Book Haven</h1>
-            <p className="py-3">Explore, add, and manage books — built with React, Node, MongoDB & Firebase.</p>
-            <div className="flex gap-2">
-              <Link to="/all-books" className="btn btn-primary">All Books</Link>
-              <Link to="/add-book" className="btn btn-outline">Create Book</Link>
-            </div>
-          </div>
-          <div className="text-center lg:text-left">
-            {/* animated banner image placeholder */}
-            <div className="w-56 h-40 bg-gradient-to-r from-purple-400 to-pink-400 rounded-md animate-pulse"></div>
-          </div>
-        </div>
-      </section>
+     <section className="relative hero bg-base-200 rounded-lg p-6 mb-8 overflow-hidden h-[300px] md:h-[400px] lg:h-[400px]">
+
+  {/* Swiper background */}
+  <div className="absolute inset-0 z-0">
+    <Swiper
+      modules={[EffectFade, Autoplay]}
+      navigation={false}
+      pagination={false}
+      autoplay={{ delay: 3000 }}
+      loop={true}
+      className="w-full h-full"
+    >
+      <SwiperSlide>
+        <img 
+          src="https://i.ibb.co.com/s9kJLQ63/download-18.jpg" 
+          alt="Banner 1" 
+          className="w-full h-full object-cover brightness-50"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img 
+          src="https://i.ibb.co.com/Wvc4cHBP/download-19.jpg" 
+          alt="Banner 2" 
+          className="w-full h-full object-cover brightness-50"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img 
+          src="https://i.ibb.co.com/VWbTZ3gZ/download-20.jpg" 
+          alt="Banner 3" 
+          className="w-full h-full object-cover brightness-50"
+        />
+      </SwiperSlide>
+    </Swiper>
+  </div>
+
+  {/* Text content */}
+  <div className="relative z-10 hero-content flex-col lg:flex-row text-white">
+    <div className="mb-4 lg:mb-0">
+      <h1 className="text-4xl font-bold">Welcome to Book Haven</h1>
+      <p className="py-3">Explore, add, and manage books — built with React, Node, MongoDB & Firebase.</p>
+      <div className="flex gap-2">
+        <Link to="/all-books" className="btn btn-primary">All Books</Link>
+        <Link to="/add-book" className="btn btn-outline">Create Book</Link>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <section>
         <h2 className="text-2xl font-semibold mb-4">Latest books</h2>
