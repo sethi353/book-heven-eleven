@@ -12,7 +12,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import PrivateRoute from './components/PrivateRoute';
-import { Toaster } from 'react-hot-toast'; // ✅ replaced react-toastify ToastContainer
+import { Toaster } from 'react-hot-toast'; 
 
 function App() {
   return (
@@ -63,7 +63,7 @@ function App() {
 
       <Footer />
 
-      {/* ✅ Global React Hot Toast container */}
+      {/* Global React Hot Toast container */}
       <Toaster position="top-right" reverseOrder={false} />
     </div>
   );

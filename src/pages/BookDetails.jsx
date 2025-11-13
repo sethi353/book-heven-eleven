@@ -4,7 +4,7 @@ import api from '../services/api';
 import Loading from '../components/Loading';
 import { auth } from '../firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
-import toast from 'react-hot-toast'; // ✅ changed import
+import toast from 'react-hot-toast'; 
 
 export default function BookDetails() {
   const { id } = useParams();
@@ -35,9 +35,9 @@ export default function BookDetails() {
       const updated = await api.get(`/books/${id}`);
       setBook(updated.data);
       setComment('');
-      toast.success('Comment added'); // ✅ updated toast
+      toast.success('Comment added'); 
     } catch (err) {
-      toast.error('Failed to add comment'); // ✅ updated toast
+      toast.error('Failed to add comment'); 
     }
   };
 

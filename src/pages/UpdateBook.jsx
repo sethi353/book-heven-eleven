@@ -10,7 +10,7 @@ export default function UpdateBook() {
   const navigate = useNavigate();
   const [book, setBook] = React.useState(null);
 
-  // ✅ Fetch existing book data
+  // Fetch existing book data
   React.useEffect(() => {
     api
       .get(`/books/${id}`)
@@ -21,15 +21,15 @@ export default function UpdateBook() {
       });
   }, [id]);
 
-  // ✅ Handle form submission
+  //  Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await api.put(`/books/${id}`, book);
-      toast.success('✅ Book updated successfully');
+      toast.success(' Book updated successfully');
       navigate('/my-books');
     } catch (err) {
-      toast.error('❌ Update failed');
+      toast.error(' Update failed');
       console.error(err);
     }
   };
@@ -38,7 +38,7 @@ export default function UpdateBook() {
 
   return (
     <div className="max-w-2xl mx-auto p-6 mt-8 bg-base-200 rounded-lg shadow-lg">
-      {/* ✅ React Hot Toast Container */}
+      {/*  React Hot Toast Container */}
       <Toaster position="top-right" reverseOrder={false} />
 
       <h2 className="text-2xl font-semibold mb-4 text-center">Update Book</h2>
@@ -103,7 +103,7 @@ export default function UpdateBook() {
         />
         <Tooltip id="image-tip" place="right" content="Paste an online image URL" />
 
-        {/* 👇 Optional image preview */}
+        {/*  Optional image preview */}
         {book.coverImage && (
           <img
             src={book.coverImage}
