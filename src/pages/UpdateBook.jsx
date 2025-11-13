@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import toast, { Toaster } from 'react-hot-toast'; // ✅ replaced react-toastify
-import { Tooltip } from 'react-tooltip'; // ✅ added tooltips
+import toast, { Toaster } from 'react-hot-toast'; 
+import { Tooltip } from 'react-tooltip'; 
 import 'react-tooltip/dist/react-tooltip.css';
 
 export default function UpdateBook() {
