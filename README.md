@@ -1,16 +1,54 @@
-# React + Vite
+Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Book Haven is a full-stack web application where users can explore, add, update, and manage books in a digital library. Authenticated users can maintain their personal collection, and visitors can browse through all available books with filtering and sorting options.
 
-Currently, two official plugins are available:
+This project demonstrates seamless integration between React, Firebase Authentication, MongoDB Atlas, and a Node.js + Express.js backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ Key Features :
 
-## React Compiler
+1. Secure Authentication: Firebase-based login, registration, and Google sign-in.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Full CRUD Operations: Add, view, update, and delete books with real-time database updates.
 
-## Expanding the ESLint configuration
+3. Personalized Dashboard: “My Books” section for logged-in users to manage their added books.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. Modern UI/UX: Built with Tailwind CSS and DaisyUI for a clean and responsive design.
+
+5. Interactive Experience: Real-time comments, tooltips, toast notifications, and theme toggle.
+
+6. Dark/Light Mode: Users can switch between dark and light themes dynamically.
+
+7. Advanced Sorting: Sort books by rating on the All Books page.
+
+ Tech Stack
+Frontend:
+
+1. React.js
+
+2. React Router DOM
+
+3. Firebase Authentication
+
+4. Axios
+
+5. Tailwind CSS & DaisyUI
+
+6. React Hot Toast
+
+7. React Tooltip
+
+Backend:
+
+1. Node.js
+
+2. Express.js
+
+3. MongoDB Atlas
+
+Hosting:
+
+ Client: Netlify
+
+ Server: Vercel
+
+ Database: MongoDB Atlas

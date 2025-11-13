@@ -1,11 +1,11 @@
 import React from 'react';
 import api from '../services/api';
-import toast, { Toaster } from 'react-hot-toast'; // ✅ replaced toastify
+import toast, { Toaster } from 'react-hot-toast'; 
 import { auth } from '../firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { Tooltip } from 'react-tooltip'; // ✅ added tooltip
-import 'react-tooltip/dist/react-tooltip.css'; // ✅ tooltip CSS
+import { Tooltip } from 'react-tooltip'; 
+import 'react-tooltip/dist/react-tooltip.css'; 
 
 export default function AddBook() {
   const [form, setForm] = React.useState({
@@ -44,7 +44,7 @@ export default function AddBook() {
 
   return (
     <div className="max-w-2xl mx-auto p-4 relative">
-      {/* ✅ React Hot Toast container */}
+      {/*  React Hot Toast container */}
       <Toaster position="top-right" reverseOrder={false} />
 
       <h2 className="text-2xl mb-4 font-semibold text-center">Add Book</h2>
