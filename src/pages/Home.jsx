@@ -80,15 +80,52 @@ export default function Home() {
         )}
       </section>
 
-      <section className="mt-8 grid md:grid-cols-2 gap-6">
+      <section className="mt-8 grid grid-cols-1 gap-6">
         <div className="card p-4 shadow">
-          <h3 className="text-xl font-semibold mb-2">Top Genres</h3>
-          <div className="grid grid-cols-2 gap-2">
-            <div className="p-2 rounded bg-base-100">Fantasy</div>
-            <div className="p-2 rounded bg-base-100">Mystery</div>
-            <div className="p-2 rounded bg-base-100">Non-Fiction</div>
-            <div className="p-2 rounded bg-base-100">Romance</div>
-          </div>
+          <h3 className="text-2xl font-semibold mb-6 ">Top Genres</h3>
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* Genre 1 */}
+      <div className="flex items-center gap-3 p-2 rounded bg-base-100">
+        <img 
+          src="https://i.ibb.co.com/TqBQN5cd/download-21.jpg" 
+          alt="Fantasy" 
+          className="w-12 h-12 object-cover rounded"
+        />
+        <span className="font-medium">Fantasy</span>
+      </div>
+
+      {/* Genre 2 */}
+      <div className="flex items-center gap-3 p-2 rounded bg-base-100">
+        <img 
+          src="https://i.ibb.co.com/QjJ3J93H/download-4.png" 
+          alt="Mystery" 
+          className="w-12 h-12 object-cover rounded"
+        />
+        <span className="font-medium">Mystery</span>
+      </div>
+
+      {/* Genre 3 */}
+      <div className="flex items-center gap-3 p-2 rounded bg-base-100">
+        <img 
+          src="https://i.ibb.co.com/TxhsLjRr/images-12.jpg" 
+          alt="Non-Fiction" 
+          className="w-12 h-12 object-cover rounded"
+        />
+        <span className="font-medium">Non-Fiction</span>
+      </div>
+
+      {/* Genre 4 */}
+      <div className="flex items-center gap-3 p-2 rounded bg-base-100">
+        <img 
+          src="https://i.ibb.co.com/23zgW3cZ/download-5.png" 
+          alt="Romance" 
+          className="w-12 h-12 object-cover rounded"
+        />
+        <span className="font-medium">Romance</span>
+      </div>
+    </div>
+  
+          
         </div>
         <div className="card p-4 shadow">
           <h3 className="text-xl font-semibold mb-2">About The Book Haven</h3>
