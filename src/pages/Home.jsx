@@ -127,18 +127,16 @@ export default function Home() {
   </div>
 
 
-     <div class="card p-6 bg-white rounded-xl shadow-2xl border border-gray-100 transform transition duration-500 hover:scale-[1.01] text-center">
-  <div class="flex flex-col items-center mb-4">
-    
-    <h3 class="text-3xl font-bold text-black tracking-tight">
+     <div className="card p-6 bg-white rounded-xl shadow-2xl border border-gray-100 transform transition duration-500 hover:scale-[1.01] text-center">
+  <div className="flex flex-col items-center mb-4">
+    <h3 className="text-3xl font-bold text-black tracking-tight">
       Welcome to The Book Haven
     </h3>
   </div>
-  <p class="text-gray-600 mb-0 leading-relaxed">
-    <strong class="text-indigo-600">The Book Haven</strong> is more than just a website—it's your dedicated sanctuary for all things literary. We understand the joy of a good story and the comfort of a well-organized library. Our platform is meticulously designed to enrich every facet of your reading life, making it simple and inspiring.
+  <p className="text-gray-600 mb-0 leading-relaxed">
+    <strong className="text-indigo-600">The Book Haven</strong> is more than just a website—it's your dedicated sanctuary for all things literary. We understand the joy of a good story and the comfort of a well-organized library. Our platform is meticulously designed to enrich every facet of your reading life, making it simple and inspiring.
   </p>
 </div>
-        
       </section>
     </div>
   );

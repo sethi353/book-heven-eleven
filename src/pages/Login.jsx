@@ -60,6 +60,15 @@ export default function Login() {
         />
         <Tooltip id="password-tip" place="right" content="Enter your account password" />
 
+
+        {/* Forgot Password Text */}
+        <div className="text-right">
+          <span className="text-sm text-blue-500 hover:underline cursor-pointer">
+            Forgot Password?
+          </span>
+        </div>
+
+
         <div className="flex justify-between items-center">
           <button
             className="btn btn-primary"
