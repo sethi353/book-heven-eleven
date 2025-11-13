@@ -17,7 +17,7 @@ export default function UpdateBook() {
       .then((res) => setBook(res.data))
       .catch((err) => {
         console.error(err);
-        toast.error('⚠️ Failed to load book data');
+        toast.error(' Failed to load book data');
       });
   }, [id]);
 

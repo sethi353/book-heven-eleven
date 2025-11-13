@@ -34,11 +34,11 @@ export default function AddBook() {
         userName: user.displayName || user.email
       };
       await api.post('/books', payload);
-      toast.success('📚 Book added successfully!');
+      toast.success(' Book added successfully!');
       navigate('/my-books');
     } catch (err) {
       console.error(err);
-      toast.error('❌ Failed to add book');
+      toast.error(' Failed to add book');
     }
   };
 
