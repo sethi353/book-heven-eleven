@@ -1,54 +1,87 @@
-Project Overview
+📚 Book Haven
 
-The Book Haven is a full-stack web application where users can explore, add, update, and manage books in a digital library. Authenticated users can maintain their personal collection, and visitors can browse through all available books with filtering and sorting options.
+Book Haven is a full-stack web application where users can explore, add, update, and manage books in a digital library. Authenticated users can maintain their personal collection, while visitors can browse all available books with filtering and sorting options.
 
-This project demonstrates seamless integration between React, Firebase Authentication, MongoDB Atlas, and a Node.js + Express.js backend.
+This project demonstrates seamless integration of React, Firebase Authentication, MongoDB Atlas, and a Node.js + Express.js backend, with a modern and responsive UI.
 
- Key Features :
+🔑 Key Features
 
-1. Secure Authentication: Firebase-based login, registration, and Google sign-in.
+- **Secure Authentication:** Login, registration, and Google sign-in powered by Firebase.  
+- **Full CRUD Operations:** Add, view, update, and delete books with real-time updates.  
+- **Personalized Dashboard:** “My Books” section for logged-in users to manage their added books.  
+- **Modern UI/UX:** Clean and responsive design using Tailwind CSS and DaisyUI.  
+- **Interactive Experience:** Real-time comments, tooltips, toast notifications, and theme toggle.  
+- **Dark/Light Mode:** Dynamic theme switching between dark and light modes.  
+- **Advanced Sorting:** Sort books by rating on the All Books page.  
 
-2. Full CRUD Operations: Add, view, update, and delete books with real-time database updates.
+🛠 Tech Stack
 
-3. Personalized Dashboard: “My Books” section for logged-in users to manage their added books.
+*Frontend:**
 
-4. Modern UI/UX: Built with Tailwind CSS and DaisyUI for a clean and responsive design.
+- React.js  
+- React Router DOM  
+- Firebase Authentication  
+- Axios  
+- Tailwind CSS & DaisyUI  
+- React Hot Toast  
+- React Tooltip  
 
-5. Interactive Experience: Real-time comments, tooltips, toast notifications, and theme toggle.
+**Backend:**
 
-6. Dark/Light Mode: Users can switch between dark and light themes dynamically.
+- Node.js  
+- Express.js  
+- MongoDB Atlas  
 
-7. Advanced Sorting: Sort books by rating on the All Books page.
+**Hosting:**
 
- Tech Stack
-Frontend:
+- Client: Netlify  
+- Server: Vercel  
+- Database: MongoDB Atlas  
 
-1. React.js
 
-2. React Router DOM
 
-3. Firebase Authentication
+🚀 Live Demo
 
-4. Axios
+View Live Project
+ https://beamish-cajeta-3a106c.netlify.app/
 
-5. Tailwind CSS & DaisyUI
 
-6. React Hot Toast
 
-7. React Tooltip
+📂 Folder Structure
+Book-Haven/
+├── client/        # React frontend
+├── server/        # Node.js + Express backend
+├── README.md
+└── ...
 
-Backend:
+🔗 Installation & Setup
 
-1. Node.js
+Clone the repository:
 
-2. Express.js
+git clone https://github.com/sethi353/book-haven-client.git
 
-3. MongoDB Atlas
 
-Hosting:
+Install dependencies:
 
- Client: Netlify
+cd client
+npm install
 
- Server: Vercel
+cd ../server
+npm install
 
- Database: MongoDB Atlas
+
+Configure environment variables (.env) for Firebase, MongoDB, and backend server.
+
+Run the project:
+
+# Start backend
+cd server
+npm run dev
+
+# Start frontend
+cd ../client
+npm start
+
+⚡ Contributions
+
+Contributions are welcome! Please open an issue or submit a pull request for improvements or bug fixes.
